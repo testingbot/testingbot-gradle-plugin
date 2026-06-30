@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!gradle/wrapper/gradle-wrapper.jar
+!src/**/build/
+
+# Local config & secrets
+local.properties
+gradle.properties.local
+*.gpg
+*.asc
+
+# IDE & tooling
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+*.code-workspace
+.serena/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs / misc
+*.log
+*.hprof

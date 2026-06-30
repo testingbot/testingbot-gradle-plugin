@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: TestingBot Support
+    url: https://testingbot.com/support
+    about: Questions about your account, devices, or the TestingBot platform.
+  - name: Security vulnerability
+    url: https://github.com/testingbot/testingbot-gradle-plugin/security/advisories/new
+    about: Please report security issues privately, not as public issues.

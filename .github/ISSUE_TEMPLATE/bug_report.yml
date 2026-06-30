@@ -1,0 +1,51 @@
+name: Bug report
+description: Report a problem with the TestingBot Gradle Plugin
+labels: [ bug ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a bug! Please **do not include your API key or
+        secret** anywhere in this report.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: Include the relevant `testingbot { }` configuration and the Gradle command you ran.
+      render: shell
+    validations:
+      required: true
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      placeholder: "0.1.0"
+    validations:
+      required: true
+  - type: input
+    id: gradle-version
+    attributes:
+      label: Gradle version
+      placeholder: "8.14.3"
+    validations:
+      required: true
+  - type: input
+    id: jdk-version
+    attributes:
+      label: JDK version
+      placeholder: "21"
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Output of the failing task with `--stacktrace` (redact any secrets).
+      render: shell
