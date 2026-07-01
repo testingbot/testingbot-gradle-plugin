@@ -4,9 +4,14 @@ name: Publish
 # push to Maven Central (Central Portal), and attach artifacts to a GitHub Release.
 # This repo additionally publishes to the Gradle Plugin Portal (the primary way users
 # apply a Gradle plugin).
+#
+# Triggers on version tags with or without a leading "v" (e.g. 0.1.0 or v0.1.0), and
+# can also be started manually from the Actions tab (workflow_dispatch), which publishes
+# whatever VERSION_NAME is set in gradle.properties.
 on:
   push:
-    tags: [ 'v*' ]
+    tags: [ 'v*', '[0-9]*' ]
+  workflow_dispatch: {}
 
 permissions:
   contents: read
@@ -31,6 +36,7 @@ jobs:
         uses: gradle/actions/setup-gradle@v6
 
       - name: Verify the tag matches VERSION_NAME
+        if: github.ref_type == 'tag'
         run: |
           VERSION=$(grep '^VERSION_NAME=' gradle.properties | cut -d= -f2)
           TAG=${GITHUB_REF_NAME#v}
@@ -59,6 +65,7 @@ jobs:
           ORG_GRADLE_PROJECT_signingInMemoryKeyPassword: ${{ secrets.GPG_PASSPHRASE }}
 
       - name: Create GitHub Release
+        if: github.ref_type == 'tag'
         uses: softprops/action-gh-release@v3
         with:
           files: build/libs/*.jar
