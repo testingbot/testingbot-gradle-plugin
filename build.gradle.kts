@@ -18,6 +18,7 @@ dependencies {
 
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.junit.jupiter)
+    testImplementation(gradleApi())
     testRuntimeOnly(libs.junit.platform.launcher)
 }
 
@@ -50,7 +51,7 @@ gradlePlugin {
 }
 
 // --- Functional tests (Gradle TestKit) --------------------------------------
-val functionalTest: SourceSet by sourceSets.creating
+val functionalTest: SourceSet = sourceSets.create("functionalTest")
 gradlePlugin.testSourceSets(functionalTest)
 
 configurations["functionalTestImplementation"].extendsFrom(configurations["testImplementation"])
