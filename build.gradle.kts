@@ -1,5 +1,4 @@
 import com.vanniktech.maven.publish.GradlePublishPlugin
-import com.vanniktech.maven.publish.SonatypeHost
 import org.gradle.plugins.signing.Sign
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -86,7 +85,8 @@ mavenPublishing {
     // Use the GradlePublishPlugin platform because com.gradle.plugin-publish already
     // creates the publication, the sources/javadoc jars, and the plugin marker.
     configure(GradlePublishPlugin())
-    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL, automaticRelease = true)
+    // vanniktech 0.32+ targets the Central Portal only, so no SonatypeHost argument.
+    publishToMavenCentral(automaticRelease = true)
     signAllPublications()
 }
 
