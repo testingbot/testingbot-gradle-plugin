@@ -1,7 +1,7 @@
 [versions]
 # Kotlin is pinned below 2.3.30: the CodeQL Kotlin extractor does not yet support
 # newer releases (fails with KotlinVersionTooRecentError). Bump once CodeQL catches up.
-kotlin = "2.2.20"
+kotlin = "2.4.10"
 gson = "2.14.0"
 junit = "6.1.1"
 pluginPublish = "2.1.1"
