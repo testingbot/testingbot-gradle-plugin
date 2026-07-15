@@ -3,7 +3,7 @@
 # newer releases (fails with KotlinVersionTooRecentError). Bump once CodeQL catches up.
 kotlin = "2.2.20"
 gson = "2.14.0"
-junit = "6.1.1"
+junit = "6.1.2"
 pluginPublish = "2.1.1"
 vanniktechPublish = "0.37.0"
 
