@@ -4,7 +4,7 @@
 kotlin = "2.2.20"
 gson = "2.14.0"
 junit = "6.1.1"
-pluginPublish = "2.1.1"
+pluginPublish = "2.2.1"
 vanniktechPublish = "0.37.0"
 
 [libraries]
